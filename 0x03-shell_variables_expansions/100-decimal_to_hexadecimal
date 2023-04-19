@@ -1,2 +1,2 @@
 #!/bin/bash
-export $(($DECIMAL=%x))
+export $(($DECIMAL#%x))
