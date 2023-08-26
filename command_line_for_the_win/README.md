@@ -2,8 +2,8 @@
 
 ``CMD CHALLENGE`` is a pretty cool game challenging you on Bash skills. Everything is done via the command line and the questions are becoming increasingly complicated. It’s a good training to improve your command line skills!
 
-## Process To Transfer Screenshots from WIndows Desktop to Terminal using SFTP
-* First create a folder on pc desktop and transferr ``screenshots`` into it.
+## Process To Transfer Screenshots from Windows Desktop to Terminal using SFTP
+* First create a folder on pc desktop and transfer ``screenshots`` into it.
 * I saved the ``screenshots`` in ``png`` format
 * Open ``command prompt`` and navigate to the path where the ``screenshots`` have been saved
 * Use the ``SFTP command-line tool`` to establish a connection to the sandbox environment.
@@ -14,4 +14,6 @@
   sandbox environment
 * Confirm that the ``screenshots`` have been successfully transferred by checking the
   sandbox directory.
-		:hands raised: :hands raised: :hands raised:
+		
+
+:raised_hands: :raised_hands: :raised_hands:
