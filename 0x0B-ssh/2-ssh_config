@@ -1,0 +1,5 @@
+# SSH configuration to allow access without password and to disable password
+# authentication altogether
+Host *
+      PasswordAuthentication no
+      IdentityFile ~/.ssh/school
