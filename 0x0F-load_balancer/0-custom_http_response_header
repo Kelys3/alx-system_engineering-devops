@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Setting up custom header (X-Served-By) on web-01 and web-02
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "add_header X-Served-By $HOSTNAME;" | sudo tee -a /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
