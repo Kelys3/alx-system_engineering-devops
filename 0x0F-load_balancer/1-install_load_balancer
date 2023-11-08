@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
 #Install and Configure HAproxy on lb-01 to send traffic to web-01 and web-02
 
-apt-get -y update
-apt-get install -y software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.8
-apt-get install -y haproxy=2.8.\*
+sudo apt-get update
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository -y ppa:vbernat/haproxy-2.8
+sudo apt-get -y update
+sudo apt-get install -y haproxy
 
 cat <<EOL | sudo tee /etc/haproxy/haproxy.cfg
-
-defaults
-  mode http
-  timeout connect 5000
-  timeout client 50000
-  timeout server 50000
-
 frontend myfrontend
   bind *:80
-  default_backend web_servers
+  mode http
+  default_backend myservers
+  timeout client 5000s
 
-backend web_servers
+backend myservers
   balance roundrobin
-  server 400500-web-01  54.144.154.247:80 check
-  server 400500-web-02  54.89.27.191:80 check
+  mode http
+  timeout client 5000s
+  timeout server 5000s
+  server 400500-web-01 54.144.154.247:80 check
+  server 400500-web-02 54.89.27.191:80 check
 EOL
-
 sudo service haproxy restart
