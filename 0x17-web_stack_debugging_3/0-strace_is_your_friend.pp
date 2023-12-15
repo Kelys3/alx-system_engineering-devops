@@ -1,6 +1,6 @@
 # Fix the WordPress file wp-settings.php to replace 'phpp' with 'php'
 
-exec { 'fix_wp_settings_path':
+exec { 'fix-wordpress':
   command => 'sed -i "137s/phpp/php/g" /var/www/html/wp-settings.php',
-  path    => ['/bin', '/usr/bin']
+  path    => '/usr/local/bin/:/bin/'
 }
