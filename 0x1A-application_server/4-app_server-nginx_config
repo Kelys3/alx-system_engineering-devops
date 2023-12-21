@@ -1,0 +1,11 @@
+# Configures Nginx to serve the AirBnB_clone_v3 API.
+
+server {
+    # Listen on port 80
+    listen      80 default_server;
+    listen      [::]:80 default_server ipv6only=on;
+    
+    location /api/ {
+        proxy_pass http://127.0.0.1:5002/api/;
+        }
+}
